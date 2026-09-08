@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DF · Defendiendo la Justicia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-frame">
+
+  <!-- ============ PORTADA ============ -->
+  <div class="screen active" id="screen-splash">
+    <div class="logo-seal">
+      <div class="df">DF</div>
+      <div class="tagline">DECISIÓN FINAL<br>UN PIXEL A LA VEZ.</div>
+      <div class="game">GAME</div>
+    </div>
+    <button class="btn btn-primary" data-goto="screen-registro">COMENZAR</button>
+  </div>
+
+  <!-- ============ REGISTRO ============ -->
+  <div class="screen" id="screen-registro">
+    <h1>REGISTRO</h1>
+    <div class="panel" style="margin-top:24px; flex:1; display:flex; flex-direction:column;">
+      <div class="field">
+        <label>Correo electrónico:</label>
+        <input type="email" placeholder="tuemail@correo.com">
+      </div>
+      <div class="field">
+        <label>Usuario de jugador:</label>
+        <input type="text" placeholder="Ej: abogado_pixel">
+      </div>
+      <button class="arrow-fab mt-auto" data-goto="screen-menu">→</button>
+    </div>
+  </div>
+
+  <!-- ============ MENU PRINCIPAL ============ -->
+  <div class="screen" id="screen-menu">
+    <div class="topbar">
+      <button class="icon-btn" data-goto="screen-vestir"><img src="Íconos/Boton_vestir.png"></button>
+      <div style="flex:1"></div>
+      <button class="icon-btn" data-goto="screen-config"><img src="Íconos/boton_config.png"></button>
+    </div>
+    <div class="center" style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+      <h1 style="margin-bottom:10px;">MENÚ</h1>
+    </div>
+    <div class="menu-actions">
+      <button class="btn-round" data-goto="screen-ranking" title="Ranking"><img src="Íconos/boton_Ranking.png"></button>
+      <button class="btn-round big" data-goto="screen-niveles" title="Jugar"><img src="Íconos/boton_play.png"></button>
+      <button class="btn-round" data-goto="screen-manual" title="Manual"><img src="Íconos/boton_manual.png"></button>
+    </div>
+  </div>
+
+  <!-- ============ VESTÍ A TU PERSONAJE ============ -->
+  <div class="screen" id="screen-vestir">
+    <div class="topbar">
+      <button class="icon-btn" data-back>←</button>
+      <h1>¡ VESTÍ A TU PERSONAJE !</h1>
+      <div style="width:34px"></div>
+    </div>
+    <div class="dressup">
+      <div class="avatar-box" id="avatarBox">🧑‍💼</div>
+      <div class="wardrobe" id="wardrobe">
+        <div class="item selected" data-emoji="🧑‍💼">👔</div>
+        <div class="item" data-emoji="👩‍💼">👗</div>
+        <div class="item" data-emoji="🕵️">🎩</div>
+        <div class="item" data-emoji="🧑‍⚖️">⚖️</div>
+        <div class="item" data-emoji="👨‍💼">👓</div>
+        <div class="item" data-emoji="🧑‍🎓">🎓</div>
+        <div class="item" data-emoji="🧑‍🚀">🧣</div>
+        <div class="item" data-emoji="🧑‍🎤">👜</div>
+      </div>
+    </div>
+    <p class="hint-text">Con cada nivel vas a ir desbloqueando accesorios.</p>
+  </div>
+
+  <!-- ============ CONFIGURACIÓN ============ -->
+  <div class="screen" id="screen-config">
+    <div class="topbar">
+      <button class="icon-btn" data-back>←</button>
+      <h1>CONFIGURACIÓN</h1>
+      <div style="width:34px"></div>
+    </div>
+    <div class="panel" style="flex:1;">
+      <div class="config-grid">
+        <div class="config-item">
+          <label>Volumen:</label>
+          <input type="range" min="0" max="100" value="70">
+        </div>
+        <div class="config-item">
+          <label>Idioma:</label>
+          <select>
+            <option>ESPAÑOL</option>
+            <option>ENGLISH</option>
+          </select>
+        </div>
+        <div class="config-item">
+          <label>Brillo:</label>
+          <input type="range" min="0" max="100" value="55">
+        </div>
+        <div class="config-item">
+          <label>Gráficos:</label>
+          <select>
+            <option>1920x1080</option>
+            <option>1280x720</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+      <button class="icon-btn" data-goto="screen-soporte">💬</button>
+    </div>
+  </div>
+
+  <!-- ============ SOPORTE ============ -->
+  <div class="screen" id="screen-soporte">
+    <div class="topbar">
+      <button class="icon-btn" data-back>←</button>
+      <h1>SOPORTE</h1>
+      <div style="width:34px"></div>
+    </div>
+    <div class="faq-item">
+      <div class="q">¿Qué debo hacer durante el juicio?</div>
+      <div class="a">Analizá las pruebas, escuchá los testimonios y tomá decisiones para intentar resolver el caso correctamente.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">¿Qué pasa si presento una prueba incorrecta?</div>
+      <div class="a">Podés perder una parte de tu puntuación o avanzar hacia una resolución desfavorable del caso.</div>
+    </div>
+    <div class="social-row">
+      <div class="icon-btn">📷</div>
+      <div class="icon-btn">💬</div>
+    </div>
+    <button class="btn btn-primary mt-auto">CONTACTANOS</button>
+  </div>
+
+  <!-- ============ RANKING ============ -->
+  <div class="screen" id="screen-ranking">
+    <div class="topbar">
+      <button class="icon-btn" data-back>←</button>
+      <h1>RANKING</h1>
+      <div style="width:34px"></div>
+    </div>
+    <div class="rank-row"><div class="rank-avatar"></div><div class="rank-bar"><span style="width:90%"></span></div><span class="rank-star">★</span></div>
+    <div class="rank-row"><div class="rank-avatar"></div><div class="rank-bar"><span style="width:74%"></span></div><span class="rank-star">★</span></div>
+    <div class="rank-row"><div class="rank-avatar"></div><div class="rank-bar"><span style="width:60%"></span></div><span class="rank-star">★</span></div>
+    <div class="rank-row"><div class="rank-avatar"></div><div class="rank-bar"><span style="width:45%"></span></div><span class="rank-star">★</span></div>
+  </div>
+
+  <!-- ============ SELECCIÓN DE NIVEL ============ -->
+  <div class="screen" id="screen-niveles">
+    <div class="topbar">
+      <button class="icon-btn" data-back>←</button>
+      <h1>SELECCIÓN DE NIVEL</h1>
+      <div style="width:34px"></div>
+    </div>
+    <div class="level-row"><div class="play-dot" data-goto="screen-nivel-titulo">▶</div><div class="name" data-goto="screen-nivel-titulo">NIVEL 1</div></div>
+    <div class="level-row"><div class="play-dot">▶</div><div class="name">NIVEL 2</div></div>
+    <div class="level-row"><div class="play-dot">▶</div><div class="name">NIVEL 3</div></div>
+    <div class="level-row"><div class="play-dot">▶</div><div class="name">NIVEL 4</div></div>
+  </div>
+
+  <!-- ============ MANUAL DE JUEGO ============ -->
+  <div class="screen" id="screen-manual">
+    <div class="topbar">
+      <button class="icon-btn" data-back>←</button>
+      <h1>MANUAL DE JUEGO</h1>
+      <div style="width:34px"></div>
+    </div>
+    <p class="body-text">1. Vestí a tu personaje.<br>2. Selecciona con el mouse las prendas que tengas disponibles.<br>3. Volvé para atrás y jugá para obtener más recompensas.</p>
+    <p class="body-text" style="margin-top:14px;">Utilizá el mouse para tocar botones y las teclas para responder las preguntas.</p>
+  </div>
+
+  <!-- ============ TÍTULO DE NIVEL ============ -->
+  <div class="screen" id="screen-nivel-titulo">
+    <div class="center" style="flex:1;">
+      <div class="level-banner">
+        <h1>LA EMPRESA ECOLÓGICA</h1>
+      </div>
+    </div>
+    <button class="btn btn-primary" data-goto="screen-nivel-desc">CONTINUAR</button>
+  </div>
+
+  <!-- ============ DESCRIPCIÓN DE NIVEL ============ -->
+  <div class="screen" id="screen-nivel-desc">
+    <div class="level-tag">NIVEL 1</div>
+    <div class="doc-body">
+      <p class="body-text">Una empresa vende productos sustentables y dice defender el medio ambiente, pero se descubre que fabrica en una planta extranjera donde los trabajadores cobran poco y tienen peores condiciones laborales.</p>
+      <p class="body-text" style="margin-top:10px;">La empresa asegura que así puede mantener precios bajos y ayudar a más personas a comprar productos ecológicos.</p>
+    </div>
+    <button class="btn btn-primary mt-auto" data-goto="screen-info-caso">SIGUIENTE</button>
+  </div>
+
+  <!-- ============ INFORMACIÓN DEL CASO ============ -->
+  <div class="screen" id="screen-info-caso">
+    <div class="topbar">
+      <button class="icon-btn" data-back>←</button>
+      <h1>INFORMACIÓN DEL CASO</h1>
+      <div style="width:34px"></div>
+    </div>
+    <div class="folder-row">
+      <div class="folder" data-goto="screen-testimonios"><span class="icon">📁</span><span class="name">Testimonios</span></div>
+      <div class="folder" data-goto="screen-denuncia"><span class="icon">📁</span><span class="name">Denuncia</span></div>
+      <div class="folder" data-goto="screen-pruebas"><span class="icon">📁</span><span class="name">Pruebas</span></div>
+    </div>
+    <p class="body-text">En cada carpeta habrá información acerca del juicio. Cuando hayas leído todos los documentos tocá el botón con la flechita para empezar.</p>
+    <button class="arrow-fab mt-auto" data-goto="screen-juicio-intro">→</button>
+  </div>
+
+  <!-- ============ PRUEBAS ============ -->
+  <div class="screen" id="screen-pruebas">
+    <div class="doc-header">
+      <span class="icon-btn" style="cursor:default;">📁</span>
+      <span class="tag">PRUEBAS — Fragmento de grabación<br>(transcripción parcial, reunión interna filtrada)</span>
+    </div>
+    <div class="doc-body">
+      <p>— "El tema es si subimos los costos de producción en la planta, se nos cae el margen del 40% que tenemos en el segmento premium."</p>
+      <p style="margin-top:8px;">— "Pero en la web decimos que pagamos salarios justos en toda la cadena."</p>
+      <p style="margin-top:8px;">— "Sí, esa frase la redactamos con legal. Técnicamente pagamos el salario mínimo local, que 'legalmente' es justa."</p>
+      <div class="waveform" id="waveform"></div>
+    </div>
+    <button class="icon-btn mt-auto" data-back style="align-self:flex-start;">←</button>
+  </div>
+
+  <!-- ============ TESTIMONIOS ============ -->
+  <div class="screen" id="screen-testimonios">
+    <div class="doc-header">
+      <span class="icon-btn" style="cursor:default;">📁</span>
+      <span class="tag">TESTIMONIOS — Testimonio de un ex empleado de planta.</span>
+    </div>
+    <div class="doc-body">
+      <p>"Trabajé casi tres años en la planta donde se cosen las bolsas 'ecológicas' que después se venden en Europa y Estados Unidos a precios bastante altos. Acá nos pagaban por pieza, no por hora, así que si querías llegar a un sueldo digno tenías que hacer turnos de diez, once horas. No había ventilación buena en el sector de teñido, y varias compañeras terminaron con problemas respiratorios.</p>
+      <p style="margin-top:8px;">Cuando venía gente de la empresa madre a visitar la planta, nos avisaban con dos días de anticipación. Limpiaban todo, nos daban guantes nuevos, apagaban una de las máquinas más viejas para que no hiciera tanto ruido. Un supervisor nos dijo textual: 'hoy actuamos como que todo está bien'.</p>
+      <p style="margin-top:8px;">Yo entiendo el argumento de que producir acá abarata costos...</p>
+    </div>
+    <button class="icon-btn mt-auto" data-back style="align-self:flex-start;">←</button>
+  </div>
+
+  <!-- ============ DENUNCIA ============ -->
+  <div class="screen" id="screen-denuncia">
+    <div class="doc-header">
+      <span class="icon-btn" style="cursor:default;">📁</span>
+      <span class="tag">DENUNCIA</span>
+    </div>
+    <div class="doc-body">
+      <p><strong>1. Hechos</strong></p>
+      <p style="margin-top:6px;">1. La empresa denunciada comercializa sus productos bajo el lema de ser "100% sustentable" y "comprometida con el bienestar de los trabajadores en toda su cadena de producción", según se desprende de su publicidad web y etiquetado de productos.</p>
+      <p style="margin-top:6px;">2. Sin embargo, se ha constatado que la fabricación de dichos productos se realiza en una planta ubicada en [país], donde los trabajadores perciben salarios por debajo del ingreso digno, cumplen jornadas de hasta [X] horas diarias, y no cuentan con condiciones de seguridad e...</p>
+    </div>
+    <button class="icon-btn mt-auto" data-back style="align-self:flex-start;">←</button>
+  </div>
+
+  <!-- ============ ESCENA DE JUICIO ============ -->
+  <div class="screen" id="screen-juicio-intro">
+    <div class="courtroom">
+      <div class="pillars"><span>🏛</span><span>⚖</span><span>🏛</span></div>
+      <div class="judge">🧑‍⚖️</div>
+      <div class="speech-bubble">
+        "La empresa 'Ecovida' afirma en su publicidad que es '100% sustentable' y que 'paga salarios justos en toda su cadena de producción'. Sin embargo, un ex empleado reveló que la planta ajustaba las condiciones de trabajo solo cuando recibía visitas de la casa matriz."
+      </div>
+    </div>
+    <button class="btn btn-primary mt-auto" data-goto="screen-quiz">EMPEZAR DESAFÍO</button>
+  </div>
+
+  <!-- ============ DESAFÍO DE NIVEL (QUIZ) ============ -->
+  <div class="screen" id="screen-quiz">
+    <div class="topbar">
+      <button class="icon-btn" data-back>←</button>
+      <h1>DESAFÍO DE NIVEL</h1>
+      <div style="width:34px"></div>
+    </div>
+    <div class="courtroom" style="padding:12px;">
+      <div class="judge" style="font-size:34px;">🧑‍⚖️</div>
+    </div>
+    <p class="quiz-question">¿Cómo se llama esta práctica, en la que una empresa comunica una imagen ambiental o social positiva que no se corresponde con sus acciones reales?</p>
+    <div class="quiz-options" id="quizOptions">
+      <div class="quiz-option" data-correct="true"><b>A)</b> Greenwashing</div>
+      <div class="quiz-option"><b>B)</b> Responsabilidad social empresaria</div>
+      <div class="quiz-option"><b>C)</b> Marketing sustentable</div>
+      <div class="quiz-option"><b>D)</b> Certificación ambiental</div>
+    </div>
+    <div class="quiz-feedback" id="quizFeedback"></div>
+  </div>
+
+</div>
+
+<script>
+  // -------- navegación entre pantallas --------
+  const history_stack = ['screen-splash'];
+
+  function showScreen(id, pushHistory = true){
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if(pushHistory) history_stack.push(id);
+  }
+
+  document.querySelectorAll('[data-goto]').forEach(el => {
+    el.addEventListener('click', () => showScreen(el.dataset.goto));
+  });
+
+  document.querySelectorAll('[data-back]').forEach(el => {
+    el.addEventListener('click', () => {
+      if(history_stack.length > 1){
+        history_stack.pop();
+        showScreen(history_stack[history_stack.length - 1], false);
+      }
+    });
+  });
+
+  // -------- vestí a tu personaje --------
+  const avatarBox = document.getElementById('avatarBox');
+  document.querySelectorAll('#wardrobe .item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('#wardrobe .item').forEach(i => i.classList.remove('selected'));
+      item.classList.add('selected');
+      avatarBox.textContent = item.dataset.emoji;
+    });
+  });
+
+  // -------- forma de onda decorativa (pruebas) --------
+  const wf = document.getElementById('waveform');
+  if(wf){
+    for(let i=0;i<40;i++){
+      const bar = document.createElement('span');
+      bar.style.height = (6 + Math.random()*28) + 'px';
+      wf.appendChild(bar);
+    }
+  }
+
+  // -------- quiz --------
+  const quizOptions = document.getElementById('quizOptions');
+  const quizFeedback = document.getElementById('quizFeedback');
+  let answered = false;
+
+  if(quizOptions){
+    quizOptions.querySelectorAll('.quiz-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        if(answered) return;
+        answered = true;
+        const isCorrect = opt.dataset.correct === 'true';
+        quizOptions.querySelectorAll('.quiz-option').forEach(o => {
+          if(o.dataset.correct === 'true') o.classList.add('correct');
+        });
+        if(!isCorrect) opt.classList.add('incorrect');
+        quizFeedback.textContent = isCorrect
+          ? '¡Correcto! Es "greenwashing".'
+          : 'Incorrecto. La respuesta correcta era "Greenwashing".';
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
