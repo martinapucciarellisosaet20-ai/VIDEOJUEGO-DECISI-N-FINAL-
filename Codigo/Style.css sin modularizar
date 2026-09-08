@@ -1,0 +1,508 @@
+/* =========================================================
+   DF · DEFENDIENDO LA JUSTICIA — sistema visual (ESCRITORIO)
+   Paleta: vino tinto + dorado antiguo + crema pergamino
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root{
+  /* color */
+  --wine-950:#2a0e1e;
+  --wine-900:#3a1226;
+  --wine-800:#4a1830;
+  --wine-700:#5a2038;
+  --wine-600:#6b2842;
+  --gold:#cda86a;
+  --gold-bright:#e8c896;
+  --gold-dim:#9c7b45;
+  --cream:#f3e6c8;
+  --cream-dark:#e6d3a3;
+  --ink:#3a2214;
+  --wood:#6b3a1f;
+  --wood-dark:#42210f;
+  --red:#8c3232;
+  --red-bright:#b23b3b;
+  --green:#3f6b45;
+  --green-bright:#4f8a56;
+
+  /* type */
+  --font-titles:'Press Start 2P', Bebas Neue;
+  --font-subtitles:'Press Start 2P', Outfit Light 300;
+  --font-text:'Press Start 2P', Outfit Thin 100;
+  --font-body:'VT323', monospace;
+
+  --radius-lg:22px;
+  --radius-md:12px;
+  --radius-sm:8px;
+  --shadow-panel:0 10px 24px rgba(0,0,0,.45), inset 0 0 0 2px rgba(205,168,106,.25);
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+html,body{
+  height:100%;
+  background:
+    radial-gradient(circle at 50% -10%, #4a1830 0%, #1c0a13 65%);
+  font-family:var(--font-body);
+  color:var(--cream);
+}
+
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  min-height:100vh;
+  
+}
+
+/* =========================================================
+   MARCO DE APP (ventana de escritorio, formato horizontal)
+   ========================================================= */
+.app-frame{
+    position:relative;
+    width:1180px;
+  max-width:100%;
+  height:720px;
+  background:var(--wine-900);
+  border-radius:20px;
+  box-shadow:0 40px 80px rgba(0,0,0,.65), 0 0 0 10px var(--wood-dark), 0 0 0 13px var(--gold-dim);
+  overflow:hidden;
+}
+
+/* textura de fondo tipo pergamino grabado */
+.screen{
+  position:absolute;
+  inset:0;
+  display:none;
+  flex-direction:column;
+  background-image: url('./Imagenes/Primer_fondo.png');
+  /* background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.03), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(0,0,0,.06) 0 2px, transparent 2px 22px),
+    var(--wine-800); */ 
+  padding:34px 56px;
+  overflow-y:auto;
+}
+.screen.active{display:flex;}
+.screen::-webkit-scrollbar{width:8px;}
+.screen::-webkit-scrollbar-thumb{background:var(--gold-dim); border-radius:4px;}
+
+/* contenido centrado con ancho máximo legible dentro de la ventana ancha */
+.content-max{
+  width:100%;
+  max-width:820px;
+  margin:0 auto;
+}
+
+/* =========================================================
+   TIPOGRAFÍA
+   ========================================================= */
+h1.title{
+  font-family:var(--font-titles);
+  color:var(--gold-bright);
+  letter-spacing:.5px;
+  text-shadow:0 2px 0 rgba(0,0,0,.5);
+}
+h2.title{
+  font-family:var(--font-subtitles);
+  color:var(--gold-bright);
+  letter-spacing:.5px;
+  text-shadow:0 2px 0 rgba(0,0,0,.5);
+}
+h3.title{
+  font-family:var(--font-text);
+  color:var(--gold-bright);
+  letter-spacing:.5px;
+  text-shadow:0 2px 0 rgba(0,0,0,.5);
+}
+
+h1{font-size:100px; text-align:center;}
+h2{font-size:18px;}
+h3{font-size:15px;}
+p, label, li, span, div{font-family:var(--font-body);}
+.body-text{font-size:23px; line-height:1.4; color:var(--cream);}
+.label{font-family:var(--font-display); font-size:11px; color:var(--gold); text-transform:uppercase;}
+
+/* =========================================================
+   BARRA SUPERIOR / NAV
+   ========================================================= */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:26px;
+}
+.icon-btn{
+  width:46px; height:46px;
+  border-radius:50%;
+  background:var(--wood);
+  border:2px solid var(--gold-dim);
+  color:var(--cream);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  font-size:20px;
+  transition:transform .12s ease, background .12s ease;
+}
+.icon-btn:hover{background:var(--wood-dark); transform:translateY(-1px);}
+.icon-btn:active{transform:translateY(1px) scale(.95);}
+.icon-btn img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.topbar h1{flex:1; text-align:center; margin:0 8px;}
+
+/* =========================================================
+   PANEL / CARD
+   ========================================================= */
+.panel{
+  background:var(--wine-700);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-panel);
+  padding:26px;
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+.btn{
+  font-family:var(--font-display);
+  font-size:13px;
+  color:var(--cream);
+  background:var(--wood);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-md);
+  padding:16px 26px;
+  cursor:pointer;
+  text-align:center;
+  box-shadow:0 5px 0 var(--wood-dark);
+  transition:transform .08s ease, box-shadow .08s ease;
+}
+.btn:hover{filter:brightness(1.1);}
+.btn:active{transform:translateY(4px); box-shadow:0 1px 0 var(--wood-dark);}
+.btn-primary{background:var(--gold-dim); color:var(--ink); box-shadow:0 5px 0 #6e5527;}
+.btn-block{width:100%;}
+.btn-round{
+  width:70px; height:70px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:26px;
+}
+.btn-round.big{width:84px; height:84px; font-size:30px;}
+
+.arrow-fab{
+  align-self:flex-end;
+  width:52px; height:52px; border-radius:50%;
+  background:var(--gold-dim); color:var(--ink);
+  border:none; font-size:22px; cursor:pointer;
+  box-shadow:0 5px 0 #6e5527;
+}
+.arrow-fab:active{transform:translateY(4px); box-shadow:none;}
+
+/* =========================================================
+   PORTADA
+   ========================================================= */
+#screen-splash{align-items:center; justify-content:center; text-align:center; gap:30px;}
+.logo-seal{
+  width:280px; height:280px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 25%, var(--wine-600), var(--wine-950) 75%);
+  border:5px solid var(--gold);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  box-shadow:0 0 0 8px var(--wine-950), 0 24px 48px rgba(0,0,0,.5);
+}
+.logo-seal .df{font-family:var(--font-display); font-size:64px; color:var(--gold-bright); line-height:1;}
+.logo-seal .tagline{font-size:11px; color:var(--gold); margin-top:14px; letter-spacing:1px;}
+.logo-seal .game{font-size:14px; color:var(--cream); margin-top:6px; letter-spacing:4px;}
+
+/* =========================================================
+   REGISTRO
+   ========================================================= */
+#screen-registro{align-items:center; justify-content:center;}
+#screen-registro .panel{width:100%; max-width:520px;}
+.field{margin-bottom:24px;}
+.field label{display:block; font-size:19px; color:var(--gold-bright); margin-bottom:8px;}
+.field input, .field select{
+  width:100%;
+  padding:14px 16px;
+  border-radius:var(--radius-sm);
+  border:2px solid var(--gold-dim);
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:21px;
+}
+.field input:focus{outline:3px solid var(--gold-bright);}
+
+/* =========================================================
+   MENU PRINCIPAL
+   ========================================================= */
+.menu-actions{
+  margin-top:auto;
+  display:flex;
+  justify-content:center;
+  gap:34px;
+  padding-bottom:16px;
+}
+.menu-actions .btn-round{background:var(--wood);}
+.menu-actions .btn-round.big{background:var(--gold-dim); color:var(--ink); box-shadow:0 5px 0 #6e5527;}
+/* Imágenes dentro de los botones del menú principal */
+.menu-actions .btn-round img{
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+.menu-actions .btn-round.big img{
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+/* =========================================================
+   VESTIR PERSONAJE
+   ========================================================= */
+.dressup{display:flex; gap:36px; flex:1;}
+.avatar-box{
+  width:280px; min-width:280px; height:100%;
+  background:var(--cream);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-md);
+  display:flex; align-items:center; justify-content:center;
+  font-size:120px;
+}
+.wardrobe{
+  flex:1;
+  background:var(--wine-900);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-md);
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:16px;
+  align-content:start;
+  overflow-y:auto;
+}
+.wardrobe .item{
+  aspect-ratio:1;
+  background:var(--cream);
+  border:2px solid var(--gold-dim);
+  border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:32px;
+  cursor:pointer;
+  transition:transform .1s ease;
+}
+.wardrobe .item:hover{transform:translateY(-2px);}
+.wardrobe .item.selected{border-color:var(--gold-bright); box-shadow:0 0 0 3px var(--gold-bright) inset;}
+.hint-text{font-size:19px; color:var(--gold); margin-top:20px; text-align:center;}
+
+/* =========================================================
+   CONFIGURACIÓN
+   ========================================================= */
+#screen-config{align-items:center; justify-content:center;}
+#screen-config .panel{width:100%; max-width:640px;}
+.config-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:8px;}
+.config-item label{display:block; font-size:18px; color:var(--gold-bright); margin-bottom:10px;}
+input[type="range"]{
+  -webkit-appearance:none; width:100%; height:8px;
+  background:var(--wine-900); border-radius:4px; border:1px solid var(--gold-dim);
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none; width:20px; height:20px; border-radius:50%;
+  background:var(--gold-bright); border:2px solid var(--ink); cursor:pointer;
+}
+
+/* =========================================================
+   RANKING
+   ========================================================= */
+.rank-row{
+  display:flex; align-items:center; gap:16px;
+  background:var(--wine-900);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-md);
+  padding:14px 18px;
+  margin-bottom:14px;
+}
+.rank-avatar{width:40px; height:40px; border-radius:50%; background:var(--cream); flex-shrink:0;}
+.rank-bar{flex:1; height:14px; background:var(--wine-700); border-radius:8px; overflow:hidden;}
+.rank-bar span{display:block; height:100%; background:var(--gold);}
+.rank-star{color:var(--gold-bright); font-size:22px;}
+
+/* =========================================================
+   SELECCIÓN DE NIVEL / MANUAL
+   ========================================================= */
+.level-row{
+  display:flex; align-items:center; gap:18px;
+  margin-bottom:18px;
+}
+.level-row .play-dot{
+  width:46px; height:46px; border-radius:50%;
+  background:var(--wood); border:2px solid var(--gold-dim);
+  display:flex; align-items:center; justify-content:center; color:var(--cream);
+  cursor:pointer; flex-shrink:0; font-size:18px;
+}
+.level-row .name{
+  flex:1;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--font-display);
+  font-size:15px;
+  padding:16px 20px;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+}
+.level-row .name:hover{background:var(--cream-dark);}
+
+/* =========================================================
+   TÍTULO DE NIVEL / DESCRIPCIÓN
+   ========================================================= */
+#screen-nivel-titulo{align-items:center; justify-content:center;}
+.level-banner{
+  background:var(--wood);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-md);
+  padding:32px 46px;
+  text-align:center;
+}
+.level-tag{
+  display:inline-block;
+  background:var(--cream); color:var(--ink);
+  font-family:var(--font-display); font-size:13px;
+  padding:8px 14px; border-radius:5px; margin-bottom:18px;
+}
+
+/* =========================================================
+   CARPETAS / DOCUMENTOS
+   ========================================================= */
+.folder-row{display:flex; gap:60px; justify-content:center; margin:28px 0;}
+.folder{
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  cursor:pointer;
+  transition:transform .12s ease;
+}
+.folder:hover{transform:translateY(-3px);}
+.folder .icon{font-size:56px;}
+.folder .name{font-size:18px; color:var(--gold-bright);}
+.doc-header{
+  display:flex; align-items:center; gap:14px;
+  background:var(--wood);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-sm);
+  padding:12px 18px;
+  margin-bottom:20px;
+}
+.doc-header .tag{font-family:var(--font-display); font-size:12px; color:var(--gold-bright); line-height:1.6;}
+.doc-body{
+  flex:1;
+  background:var(--wine-900);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-md);
+  padding:24px 28px;
+  font-size:22px;
+  line-height:1.45;
+  overflow-y:auto;
+  max-width:820px;
+  margin:0 auto;
+  width:100%;
+}
+.waveform{
+  display:flex; align-items:flex-end; gap:3px; height:46px; margin-top:20px;
+}
+.waveform span{
+  width:4px; background:var(--gold);
+  border-radius:2px;
+}
+
+/* =========================================================
+   ESCENA DE JUICIO
+   ========================================================= */
+.courtroom{
+  background:linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-md);
+  padding:26px;
+  text-align:center;
+  color:var(--ink);
+  position:relative;
+  overflow:hidden;
+  max-width:760px;
+  margin:0 auto;
+  width:100%;
+}
+.courtroom .pillars{
+  display:flex; justify-content:space-between; font-size:44px; color:var(--wood);
+  margin-bottom:8px;
+}
+.courtroom .judge{font-size:58px;}
+.speech-bubble{
+  background:var(--wine-900);
+  color:var(--cream);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-sm);
+  padding:20px;
+  font-size:19px;
+  line-height:1.45;
+  margin-top:14px;
+}
+
+/* =========================================================
+   QUIZ / DESAFÍO
+   ========================================================= */
+.quiz-question{font-size:21px; line-height:1.4; margin:18px auto; text-align:center; max-width:760px;}
+.quiz-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  max-width:760px;
+  margin:0 auto;
+  width:100%;
+}
+.quiz-option{
+  background:var(--cream);
+  color:var(--ink);
+  border:2px solid var(--gold-dim);
+  border-radius:var(--radius-sm);
+  padding:18px 20px;
+  font-size:20px;
+  cursor:pointer;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  transition:transform .08s ease;
+}
+.quiz-option b{font-family:var(--font-display); font-size:13px;}
+.quiz-option:hover{transform:translateY(-2px);}
+.quiz-option.selected{background:var(--gold-bright); box-shadow:0 0 0 2px var(--ink) inset;}
+.quiz-option.correct{background:var(--green-bright); color:#fff; border-color:var(--green);}
+.quiz-option.incorrect{background:var(--red-bright); color:#fff; border-color:var(--red);}
+.quiz-feedback{margin-top:20px; text-align:center; font-size:20px; color:var(--gold-bright); min-height:24px;}
+
+/* =========================================================
+   SOPORTE
+   ========================================================= */
+#screen-soporte .content-max{width:100%; max-width:680px; margin:0 auto; display:flex; flex-direction:column; flex:1;}
+.faq-item{margin-bottom:20px;}
+.faq-item .q{font-size:19px; color:var(--gold-bright); margin-bottom:6px;}
+.faq-item .a{font-size:19px; color:var(--cream);}
+.social-row{display:flex; gap:16px; margin-top:20px;}
+.social-row .icon-btn{background:var(--gold-dim); color:var(--ink);}
+
+/* =========================================================
+   UTILIDADES
+   ========================================================= */
+.mt-auto{margin-top:auto;}
+.center{align-items:center; justify-content:center; text-align:center;}
+.footer-note{font-size:15px; color:var(--gold-dim); text-align:center; margin-top:14px;}
+
+@media (max-width:1240px){
+  .app-frame{width:96vw; height:88vh;}
+}
+@media (max-width:820px){
+  .app-frame{width:100vw; height:100vh; border-radius:0; box-shadow:none;}
+  body{padding:0;}
+  .screen{padding:22px;}
+  .dressup{flex-direction:column;}
+  .avatar-box{width:100%; height:200px;}
+  .quiz-options{grid-template-columns:1fr;}
+}
