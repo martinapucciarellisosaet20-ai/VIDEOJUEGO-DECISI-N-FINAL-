@@ -191,12 +191,32 @@ p, label, li, span, div{font-family:var(--font-body);}
 }
 .btn-round.big{width:84px; height:84px; font-size:30px;}
 
+/*Botón de flecha características */
 .arrow-fab{
-  align-self:flex-end;
-  width:52px; height:52px; border-radius:50%;
-  background:var(--gold-dim); color:var(--ink);
-  border:none; font-size:22px; cursor:pointer;
-  box-shadow:0 5px 0 #6e5527;
+  align-self:flex-end; /* Sirve para poner el botón a la derecha */
+  margin-top:auto; /*Sirve para llevar el botón abajo*/
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  /*background:#4a3126;*/
+  border:none;
+  cursor:pointer;
+  /*box-shadow:0 5px 0 #4a3126;*/
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+/*Es para darle a la imagen un tamaño y cuadro*/
+.arrow-fab img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+  align-self:flex-end; /* Sirve para poner el botón a la derecha */
+  margin-top:auto; /*Sirve para llevar el botón abajo*/
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .arrow-fab:active{transform:translateY(4px); box-shadow:none;}
 
