@@ -1,37 +1,50 @@
 <!-- ============ CONFIGURACIÓN ============ -->
-<div class="screen" id="screen-config">
-  <div class="topbar">
-    <button class="icon-btn" data-back>←</button>
-    <h1>CONFIGURACIÓN</h1>
-    <div style="width:34px"></div>
-  </div>
-  <div class="panel" style="flex:1;">
-    <div class="config-grid">
-      <div class="config-item">
-        <label>Volumen:</label>
-        <input type="range" min="0" max="100" value="70">
-      </div>
-      <div class="config-item">
-        <label>Idioma:</label>
-        <select>
-          <option>ESPAÑOL</option>
-          <option>ENGLISH</option>
-        </select>
-      </div>
-      <div class="config-item">
-        <label>Brillo:</label>
-        <input type="range" min="0" max="100" value="55">
-      </div>
-      <div class="config-item">
-        <label>Gráficos:</label>
-        <select>
-          <option>1920x1080</option>
-          <option>1280x720</option>
-        </select>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DF · Defendiendo la Justicia</title>
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="app-frame">
+      <div class="screen active" id="screen-config">
+    <div class="topbar">
+      <button class="icon-btn" data-back>←</button>
+      <h1>CONFIGURACIÓN</h1>
+      <div style="width:34px"></div>
+    </div>
+    <div class="panel" style="flex:1;">
+      <div class="config-grid">
+        <div class="config-item">
+          <label>Volumen:</label>
+          <input type="range" min="0" max="100" value="70">
+        </div>
+        <div class="config-item">
+          <label>Idioma:</label>
+          <select>
+            <option>ESPAÑOL</option>
+            <option>ENGLISH</option>
+          </select>
+        </div>
+        <div class="config-item">
+          <label>Brillo:</label>
+          <input type="range" min="0" max="100" value="55">
+        </div>
+        <div class="config-item">
+          <label>Gráficos:</label>
+          <select>
+            <option>1920x1080</option>
+            <option>1280x720</option>
+          </select>
+        </div>
       </div>
     </div>
-  </div>
-  <div style="display:flex; justify-content:flex-end; margin-top:10px;">
-    <button class="icon-btn" data-goto="screen-soporte">💬</button>
+    <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+      <button class="icon-btn" data-goto="screen-soporte">💬</button>
+    </div>
   </div>
 </div>
+</body>
+</html>
