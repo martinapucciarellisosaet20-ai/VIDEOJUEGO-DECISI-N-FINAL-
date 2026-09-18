@@ -12,31 +12,31 @@
       <div class="screen active" id="screen-config">
     <div class="topbar">
       <button class="icon-btn" data-back>←</button>
-      <h1>CONFIGURACIÓN</h1>
+      <h1 data-i18n="titulo">CONFIGURACIÓN</h1>
       <div style="width:34px"></div>
     </div>
     <div class="panel" style="flex:1;">
       <div class="config-grid">
         <div class="config-item">
-          <label>Volumen:</label>
+          <label data-i18n="volumen">Volumen:</label>
           <input type="range" min="0" max="100" value="70">
         </div>
         <div class="config-item">
-          <label>Idioma:</label>
-          <select>
-            <option>ESPAÑOL</option>
-            <option>ENGLISH</option>
+          <label data-i18n="idioma">Idioma:</label>
+          <select id="selector-idioma">
+            <option value="es">ESPAÑOL</option>
+            <option value="en">ENGLISH</option>
           </select>
         </div>
         <div class="config-item">
-          <label>Brillo:</label>
+          <label data-i18n="brillo">Brillo:</label>
           <input type="range" min="0" max="100" value="55">
         </div>
         <div class="config-item">
-          <label>Gráficos:</label>
-          <select>
-            <option>1920x1080</option>
-            <option>1280x720</option>
+          <label data-i18n="graficos">Gráficos:</label>
+          <select id="selector-graficos">
+            <option value="1920x1080">1920x1080</option>
+            <option value="1280x720">1280x720</option>
           </select>
         </div>
       </div>
@@ -46,5 +46,72 @@
     </div>
   </div>
 </div>
+
+<script>
+  // Diccionario de traducciones para esta pantalla
+  const traducciones = {
+    es: {
+      titulo: "CONFIGURACIÓN",
+      volumen: "Volumen:",
+      idioma: "Idioma:",
+      brillo: "Brillo:",
+      graficos: "Gráficos:"
+    },
+    en: {
+      titulo: "SETTINGS",
+      volumen: "Volume:",
+      idioma: "Language:",
+      brillo: "Brightness:",
+      graficos: "Graphics:"
+    }
+  };
+
+  function aplicarIdioma(lang) {
+    const dict = traducciones[lang] || traducciones.es;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const clave = el.getAttribute("data-i18n");
+      if (dict[clave]) el.textContent = dict[clave];
+    });
+    document.documentElement.lang = lang;
+    localStorage.setItem("df-idioma", lang);
+  }
+
+  const selectorIdioma = document.getElementById("selector-idioma");
+  const selectorGraficos = document.getElementById("selector-graficos");
+  const appFrame = document.querySelector(".app-frame");
+
+  // Tamaños de referencia para cada resolución (mantienen la proporción del marco)
+  const resoluciones = {
+    "1920x1080": { width: "1180px", height: "720px" },
+    "1280x720":  { width: "820px",  height: "500px" }
+  };
+
+  function aplicarResolucion(res) {
+    const tam = resoluciones[res] || resoluciones["1920x1080"];
+    appFrame.style.width = tam.width;
+    appFrame.style.height = tam.height;
+    localStorage.setItem("df-resolucion", res);
+  }
+
+  // Al cargar la página, restaura la resolución guardada (si existe)
+  const resolucionGuardada = localStorage.getItem("df-resolucion") || "1920x1080";
+  selectorGraficos.value = resolucionGuardada;
+  aplicarResolucion(resolucionGuardada);
+
+  // Cambia el tamaño del marco en vivo cuando el usuario elige otra opción
+  selectorGraficos.addEventListener("change", (e) => {
+    aplicarResolucion(e.target.value);
+  });
+
+  // Al cargar la página, restaura el idioma guardado (si existe)
+  const idiomaGuardado = localStorage.getItem("df-idioma") || "es";
+  selectorIdioma.value = idiomaGuardado;
+  aplicarIdioma(idiomaGuardado);
+
+  // Cambia el idioma en vivo cuando el usuario elige otra opción
+  selectorIdioma.addEventListener("change", (e) => {
+    aplicarIdioma(e.target.value);
+  });
+</script>
 </body>
 </html>
