@@ -1,21 +1,85 @@
 <!DOCTYPE html>
+<!-- Declara que este documento usa HTML5 -->
+
 <html lang="es">
+<!-- Documento en español -->
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DF · Defendiendo la Justicia</title>
-<link rel="stylesheet" href="Pantalla.titulo.css">
+    <!-- Configuración de la página -->
+
+    <meta charset="UTF-8">
+    <!-- Permite mostrar correctamente tildes, ñ y símbolos -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que la página se adapte al tamaño de la pantalla -->
+
+    <title>DF · Defendiendo la Justicia</title>
+    <!-- Título que aparece en la pestaña del navegador -->
+
+
+    <!-- Conecta este HTML con el archivo CSS -->
+    <link rel="stylesheet" href="../CSS/Pantalla.titulo.css">
+
 </head>
+
+
 <body>
-<div class="app-frame">
-  <div class="screen active" id="screen-nivel-titulo">
-    <div class="center" style="flex:1;">
-      <div class="level-banner">
-        <h1>LA EMPRESA ECOLÓGICA</h1>
-      </div>
+    <!-- Todo lo que se muestra en pantalla -->
+
+
+    <div class="app-frame">
+        <!-- Marco general de la aplicación -->
+
+
+        <div class="screen active"
+             id="screen-nivel-titulo"
+             style="
+                background-image: url('../Imagenes/Primer_fondo.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+             ">
+            <!--
+                Pantalla del título del nivel.
+
+                La imagen Primer_fondo.png se coloca directamente
+                como fondo de esta pantalla.
+            -->
+
+
+            <div class="center" style="flex:1;">
+                <!-- Contenedor que centra el contenido -->
+
+
+                <div class="level-banner">
+                    <!-- Cartel donde aparece el nombre del nivel -->
+
+                    <h1>LA EMPRESA ECOLÓGICA</h1>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                data-goto="screen-nivel-desc">
+                CONTINUAR
+            </button>
+            <!--
+                Botón para continuar al siguiente módulo.
+                data-goto indica la pantalla siguiente.
+            -->
+
+
+        </div>
+        <!-- Fin de screen-nivel-titulo -->
+
+
     </div>
-    <button class="btn btn-primary" data-goto="screen-nivel-desc">CONTINUAR</button>
-  </div>
-</div>
+    <!-- Fin de app-frame -->
+
+
 </body>
+
 </html>
