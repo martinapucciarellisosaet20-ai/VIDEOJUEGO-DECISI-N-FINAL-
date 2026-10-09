@@ -3,7 +3,7 @@
    Paleta: vino tinto + dorado antiguo + crema pergamino
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&display=swap');
 
 :root{
   /* color */
@@ -11,24 +11,25 @@
   --wine-900:#3a1226;
   --wine-800:#4a1830;
   --wine-700:#5a2038;
-  --wine-600:#6b2842;
+  --wine-main:#6e2d49;
+  --wine-pattern:#5c2440;
   --gold:#cda86a;
-  --gold-bright:#e8c896;
+  --gold-bright:#f3e3c3;
   --gold-dim:#9c7b45;
   --cream:#f3e6c8;
   --cream-dark:#e6d3a3;
   --ink:#3a2214;
-  --wood:#6b3a1f;
-  --wood-dark:#42210f;
+  --wood:#3d2318;
+  --wood-dark:#2a170f;
   --red:#8c3232;
   --red-bright:#b23b3b;
   --green:#3f6b45;
   --green-bright:#4f8a56;
 
   /* type */
-  --font-titles:'Press Start 2P', Bebas Neue;
-  --font-subtitles:'Press Start 2P', Outfit Light 300;
-  --font-text:'Press Start 2P', Outfit Thin 100;
+  --font-titles:'Baloo 2', 'Press Start 2P', sans-serif;
+  --font-subtitles:'Baloo 2', sans-serif;
+  --font-text:'Baloo 2', sans-serif;
   --font-body:'VT323', monospace;
 
   --radius-lg:22px;
