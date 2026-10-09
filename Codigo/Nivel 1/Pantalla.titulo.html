@@ -1,65 +1,68 @@
+
 <!DOCTYPE html>
-<!-- Declara que este documento usa HTML5 -->
+<!-- Declara que este documento utiliza HTML5 -->
 
 <html lang="es">
-<!-- Documento en español -->
+<!-- Indica que el idioma de la página es español -->
 
 <head>
-    <!-- Configuración de la página -->
+    <!-- Configuración general de la página -->
 
     <meta charset="UTF-8">
     <!-- Permite mostrar correctamente tildes, ñ y símbolos -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Hace que la página se adapte al tamaño de la pantalla -->
+    <!-- Adapta la página al tamaño de la pantalla -->
 
     <title>DF · Defendiendo la Justicia</title>
     <!-- Título que aparece en la pestaña del navegador -->
 
-
-    <!-- Conecta este HTML con el archivo CSS -->
-    <link rel="stylesheet" href="../CSS/Pantalla.titulo.css">
+    <!-- Conecta este HTML con tu archivo CSS -->
+    <link rel="stylesheet" href="../Style.css">
 
 </head>
 
-
 <body>
-    <!-- Todo lo que se muestra en pantalla -->
-
+    <!-- Contiene todo lo que se muestra en pantalla -->
 
     <div class="app-frame">
-        <!-- Marco general de la aplicación -->
-
+        <!-- Marco exterior de la aplicación -->
 
         <div class="screen active"
              id="screen-nivel-titulo"
              style="
                 background-image: url('../Imagenes/Primer_fondo.png');
                 background-size: cover;
-                background-position: center;
+                background-position: center center;
                 background-repeat: no-repeat;
              ">
             <!--
-                Pantalla del título del nivel.
+                Pantalla inicial del nivel.
 
-                La imagen Primer_fondo.png se coloca directamente
-                como fondo de esta pantalla.
+                background-image: establece la imagen de fondo.
+                background-size: cover: cubre toda la pantalla.
+                background-position: center center: centra la imagen.
+                background-repeat: evita que la imagen se repita.
             -->
 
-
-            <div class="center" style="flex:1;">
-                <!-- Contenedor que centra el contenido -->
-
+            <div class="center titulo-contenedor">
+                <!--
+                    Contenedor del título.
+                    La clase titulo-contenedor nos permitirá
+                    centrar el cartel horizontal y verticalmente.
+                -->
 
                 <div class="level-banner">
-                    <!-- Cartel donde aparece el nombre del nivel -->
+                    <!-- Cartel decorativo del título del nivel -->
 
                     <h1>LA EMPRESA ECOLÓGICA</h1>
+                    <!-- Nombre del nivel -->
 
                 </div>
+                <!-- Fin del cartel -->
 
             </div>
-
+            <!-- Fin del contenedor del título -->
 
             <button
                 class="btn btn-primary"
@@ -67,19 +70,16 @@
                 CONTINUAR
             </button>
             <!--
-                Botón para continuar al siguiente módulo.
-                data-goto indica la pantalla siguiente.
+                Botón para continuar a la siguiente pantalla.
+                data-goto indica el identificador de la pantalla
+                a la que se quiere avanzar.
             -->
 
-
         </div>
-        <!-- Fin de screen-nivel-titulo -->
-
+        <!-- Fin de la pantalla del título -->
 
     </div>
-    <!-- Fin de app-frame -->
-
+    <!-- Fin del marco de la aplicación -->
 
 </body>
-
 </html>
