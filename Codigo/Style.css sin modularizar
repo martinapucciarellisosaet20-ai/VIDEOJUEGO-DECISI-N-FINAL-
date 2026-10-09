@@ -512,7 +512,35 @@ input[type="range"]::-webkit-slider-thumb{
    UTILIDADES
    ========================================================= */
 .mt-auto{margin-top:auto;}
-.center{align-items:center; justify-content:center; text-align:center;}
+9/10
+/* Centra los elementos dentro de su contenedor */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Contenedor que ocupa el espacio disponible */
+.titulo-contenedor {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+}
+
+/* Cartel del título del nivel */
+#screen-nivel-titulo .level-banner {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/* Ajusta el tamaño del título para que entre en el cartel */
+#screen-nivel-titulo .level-banner h1 {
+    font-size: clamp(20px, 3vw, 36px);
+    line-height: 1.5;
+    text-align: center;
+}
+
 .footer-note{font-size:15px; color:var(--gold-dim); text-align:center; margin-top:14px;}
 
 @media (max-width:1240px){
