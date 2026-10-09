@@ -12,7 +12,12 @@
     <div class="topbar">
       <button class="icon-btn" data-goto="screen-vestir"><img src="Íconos/Boton_vestir.png"></button>
       <div style="flex:1"></div>
-      <button class="icon-btn" data-goto="screen-config"><img src="Íconos/boton_config.png"></button>
+      
+<!-- Botón que redirige a la página de configuración -->
+<button class="icon-btn" onclick="irAConfiguracion()">
+    <img src="Íconos/boton_config.png" alt="Configuración">
+</button>
+
     </div>
     <div class="center" style="flex:1; display:flex; flex-direction:column; justify-content:center;">
       <h1 style="margin-bottom:10px;">MENÚ</h1>
@@ -24,4 +29,12 @@
     </div>
   </div>
 </div>
+
+<script>
+    // Ir desde el menú a la pantalla de configuración
+    function irAConfiguracion() {
+        window.location.href = "Config.html";
+    }
+</script>
+
   </body> 
