@@ -66,13 +66,10 @@
             </div>
             <!-- Fin del contenedor del título -->
 
-            <a href="Descripcion.Nivel.html" class="btn btn-primary">
-            Nivel1
-        </a> 
+            <button class="icon-btn" onclick="irADescripcion()"><h3>Nivel 1</h3></button>
             <!--
                 Botón para continuar a la siguiente pantalla.
-                data-goto indica el identificador de la pantalla
-                a la que se quiere avanzar.
+        
             -->
 
         </div>
@@ -80,6 +77,12 @@
 
     </div>
     <!-- Fin del marco de la aplicación -->
+<script>
+    // Ir desde el la primer pantalla del nivel a Descripción
+    function irADescripcion() {
+        window.location.href = "DescripciónNivel.html";
+    }
+</script>
 
 </body>
 </html>
