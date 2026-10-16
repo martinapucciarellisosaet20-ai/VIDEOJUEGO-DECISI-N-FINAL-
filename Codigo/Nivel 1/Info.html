@@ -16,13 +16,30 @@
       <div style="width:34px"></div>
     </div>
     <div class="folder-row">
-      <div class="folder" data-goto="screen-testimonios"><span class="icon">📁</span><span class="name">Testimonios</span></div>
-      <div class="folder" data-goto="screen-denuncia"><span class="icon">📁</span><span class="name">Denuncia</span></div>
-      <div class="folder" data-goto="screen-pruebas"><span class="icon">📁</span><span class="name">Pruebas</span></div>
+      <div class="folder" onclick="irATestimonios"><span class="icon">📁</span><span class="name">Testimonios</span></div>
+      <div class="folder" onclick="irADenuncia"><span class="icon">📁</span><span class="name">Denuncia</span></div>
+      <div class="folder" onclick="irAPruebas"><span class="icon">📁</span><span class="name">Pruebas</span></div>
     </div>
     <p class="body-text">En cada carpeta habrá información acerca del juicio. Cuando hayas leído todos los documentos tocá el botón con la flechita para empezar.</p>
-    <button class="arrow-fab mt-auto" data-goto="screen-juicio-intro">→</button>
+    <button class="arrow-fab" onclick="irAEscena()">→</button>
   </div>
   </div>
   </div>
+  <script>
+    /*Redireccionamientos
+    irAEscena = va a la pantalla EscenaJuicio.html*/
+    function irAEscena(){
+      window.location.href = "EscenaJuicio.html";
+    }
+    function irAPruebas(){
+      window.location.href = "Pruebas.html";
+    }
+    function irATestimonios(){
+      window.location.href = "Testimonios.html";
+    }
+    function irADenuncia(){
+      window.location.href = "Denuncia.html";
+    }
+  </script>
 </body>
+</html>
