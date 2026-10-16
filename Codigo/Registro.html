@@ -9,6 +9,7 @@
 <body>
 
 <div class="app-frame">
+    <div class="screen active" id="screen-registro">
     <h1>REGISTRO</h1>
     <div class="field">
     <label>Correo electrónico:</label>
@@ -19,14 +20,14 @@
     <label>Usuario de jugador:</label>
     <input type="text" placeholder="Ej: abogado_pixel">
     </div>
-    /*Botón de redireccionamiento*/
-     <button class="arrow-fab"><img src="../Recursos graficos/Botonflecha (1).png" onclick="irAMenu()"></button>
+    <button class="icon-btn" onclick="irAMenu()">→</button>
+    </div>
 </div>
-</body>
-    <script>
-    // Función de ir desde el registro al menu
+<script>
+    // Ir desde el registro al menu
     function irAMenu() {
         window.location.href = "Menu.html";
     }
 </script>
+</body>
 </html>
