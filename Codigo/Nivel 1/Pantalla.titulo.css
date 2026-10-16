@@ -778,9 +778,17 @@ input[type="range"]::-webkit-slider-thumb{
   color:var(--wood);
   margin-bottom:8px;
 }
+/*Se cambio esta clase para poder adaptar la imagen del juez*/
+.courtroom .judge {
+  /* Define el ancho deseado para el contenedor de la imagen */
+  width: 200px; 
+  margin: 0 auto; /* Centra el contenedor horizontalmente si es necesario */
+}
 
-.courtroom .judge{
-  font-size:58px;
+.courtroom .judge img {
+  width: 100%; /* La imagen se ajustará al 100% del ancho del contenedor */
+  height: auto; /* Mantiene la proporción original para no deformarse */
+  display: block;
 }
 
 .speech-bubble{
