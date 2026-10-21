@@ -1,21 +1,40 @@
-<!-- ============ SOPORTE ============ -->
-<div class="screen" id="screen-soporte">
-  <div class="topbar">
-    <button class="icon-btn" data-back>←</button>
-    <h1>SOPORTE</h1>
-    <div style="width:34px"></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DF · Defendiendo la Justicia</title>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/screens.css">
+</head>
+<body>
+<div class="viewport">
+<main class="stage">
+<a class="img-btn btn-back" href="config.html" data-i18n-aria="volver"><img src="../assets/icons/flecha.png" alt="←"></a>
+<h1 class="title sm" data-i18n="soporte">SOPORTE</h1>
+<div class="sup-block" style="top:170px"><div class="sup-q" data-i18n="faq1q"></div><p class="text" data-i18n="faq1a"></p></div>
+<div class="sup-block" style="top:340px"><div class="sup-q" data-i18n="faq2q"></div><p class="text" data-i18n="faq2a"></p></div>
+<button class="btn sup-btn" id="btn-contacto" data-i18n="contactanos">CONTACTANOS</button>
+<div class="modal-backdrop hidden" id="modal-contacto">
+  <div class="modal">
+    <h2 data-i18n="contactanos">CONTACTANOS</h2>
+    <label class="text" for="mensaje" data-i18n="mensaje">Tu mensaje:</label>
+    <textarea id="mensaje" data-i18n-ph="phMensaje"></textarea>
+    <div class="row">
+      <button class="btn dark" id="cerrar-contacto" data-i18n="cerrar">CERRAR</button>
+      <button class="btn" id="enviar-contacto" data-i18n="enviar">ENVIAR</button>
+    </div>
   </div>
-  <div class="faq-item">
-    <div class="q">¿Qué debo hacer durante el juicio?</div>
-    <div class="a">Analizá las pruebas, escuchá los testimonios y tomá decisiones para intentar resolver el caso correctamente.</div>
-  </div>
-  <div class="faq-item">
-    <div class="q">¿Qué pasa si presento una prueba incorrecta?</div>
-    <div class="a">Podés perder una parte de tu puntuación o avanzar hacia una resolución desfavorable del caso.</div>
-  </div>
-  <div class="social-row">
-    <div class="icon-btn">📷</div>
-    <div class="icon-btn">💬</div>
-  </div>
-  <button class="btn btn-primary mt-auto">CONTACTANOS</button>
 </div>
+</main>
+</div>
+<script src="../js/core/store.js"></script>
+<script src="../js/core/i18n.js"></script>
+<script src="../js/core/audio.js"></script>
+<script src="../js/core/stage.js"></script>
+<script src="../js/core/sprites.js"></script>
+<script src="../js/core/boot.js"></script>
+<script src="../js/pages/soporte.js"></script>
+</body>
+</html>
