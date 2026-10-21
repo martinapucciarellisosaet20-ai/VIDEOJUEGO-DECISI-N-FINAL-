@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DF · Defendiendo la Justicia</title>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/screens.css">
+<link rel="stylesheet" href="../css/game.css">
+</head>
+<body>
+<div class="viewport">
+<main class="stage">
+<a class="img-btn btn-back" data-level-link="caso.html" data-i18n-aria="volver" style="z-index:5"><img src="../assets/icons/flecha.png" alt="←"></a>
+<div class="court" id="court"></div>
+<div class="speech"><span class="who">JUEZ</span><span id="speech-txt"></span><span class="cursor"></span></div>
+<a class="btn dark juicio-btn" data-level-link="desafio.html" data-i18n="empezarDesafio">EMPEZAR DESAFÍO</a>
+</main>
+</div>
+<script src="../js/core/store.js"></script>
+<script src="../js/core/i18n.js"></script>
+<script src="../js/core/audio.js"></script>
+<script src="../js/core/stage.js"></script>
+<script src="../js/core/sprites.js"></script>
+<script src="../js/core/boot.js"></script>
+<script src="../js/data/niveles.js"></script>
+<script src="../js/pages/juicio.js"></script>
+</body>
+</html>
