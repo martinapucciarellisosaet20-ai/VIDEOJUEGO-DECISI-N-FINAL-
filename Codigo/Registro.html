@@ -4,30 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DF · Defendiendo la Justicia</title>
-<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/screens.css">
 </head>
 <body>
-
-<div class="app-frame">
-    <div class="screen active" id="screen-registro">
-    <h1>REGISTRO</h1>
-    <div class="field">
-    <label>Correo electrónico:</label>
-    <input type="email" placeholder="tuemail@correo.com">
-    </div>
-
-    <div class="field">
-    <label>Usuario de jugador:</label>
-    <input type="text" placeholder="Ej: abogado_pixel">
-    </div>
-    <button class="icon-btn" onclick="irAMenu()">→</button>
-    </div>
+<div class="viewport">
+<main class="stage">
+<h1 class="title" data-i18n="registro">REGISTRO</h1>
+<form id="form-registro" novalidate>
+  <div class="field" id="f-correo">
+    <label class="label" for="correo" data-i18n="correo">Correo electronico:</label>
+    <input id="correo" type="email" autocomplete="email" data-i18n-ph="phCorreo" placeholder="tuemail@correo.com">
+    <div class="msg" id="msg-correo"></div>
+  </div>
+  <div class="field" id="f-usuario">
+    <label class="label" for="usuario" data-i18n="usuario">Usuario de jugador:</label>
+    <input id="usuario" type="text" maxlength="16" autocomplete="nickname" data-i18n-ph="phUsuario" placeholder="Ej: abogado_pixel">
+    <div class="msg" id="msg-usuario"></div>
+  </div>
+  <button type="submit" class="img-btn btn-next" id="btn-registro" data-i18n-aria="continuar"><img src="../assets/icons/flecha-registro.png" alt="→"></button>
+</form>
+</main>
 </div>
-<script>
-    // Ir desde el registro al menu
-    function irAMenu() {
-        window.location.href = "Menu.html";
-    }
-</script>
+<script src="../js/core/store.js"></script>
+<script src="../js/core/i18n.js"></script>
+<script src="../js/core/audio.js"></script>
+<script src="../js/core/stage.js"></script>
+<script src="../js/core/sprites.js"></script>
+<script src="../js/core/boot.js"></script>
+<script src="../js/pages/registro.js"></script>
 </body>
 </html>
