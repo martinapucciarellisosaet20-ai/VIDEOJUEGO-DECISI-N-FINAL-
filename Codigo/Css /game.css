@@ -1,0 +1,148 @@
+/* =========================================================
+   JUEGO · vestuario, juicio, desafío y resultados
+   ========================================================= */
+
+/* ---------- Vestí a tu personaje ---------- */
+.dress-title{ top:36px; font-size:76px; }
+.dress-stage{
+  position:absolute; left:100px; top:150px; width:360px; height:440px;
+  background:var(--cream-field); border-radius:18px; box-shadow:0 8px 0 rgba(0,0,0,.28);
+  display:flex; align-items:center; justify-content:center;
+}
+.dress-stage .floor{ position:absolute; bottom:26px; left:70px; right:70px; height:16px; background:#e0cba2; border-radius:50%; }
+.dress-stage svg{ position:relative; }
+.dress-tabs{ position:absolute; left:520px; top:150px; right:100px; display:flex; gap:12px; }
+.dress-tab{
+  flex:1; border:0; cursor:pointer;
+  background:var(--brown); color:var(--cream);
+  font-family:var(--font-title); font-size:30px; letter-spacing:1px; padding:12px 0 8px;
+  border-radius:10px 10px 0 0; opacity:.7;
+}
+.dress-tab.on{ opacity:1; background:var(--cream-field); color:var(--brown); }
+.dress-grid{
+  position:absolute; left:520px; right:100px; top:208px; height:382px;
+  background:var(--cream-field); border-radius:0 0 18px 18px; box-shadow:0 8px 0 rgba(0,0,0,.28);
+  padding:24px; display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; align-content:start; overflow:auto;
+}
+.dress-item{
+  position:relative; border:3px solid transparent; background:#efdcba; border-radius:12px; cursor:pointer;
+  padding:8px 6px 6px; display:flex; flex-direction:column; align-items:center; gap:2px; color:var(--brown);
+  transition:transform .1s;
+}
+.dress-item:hover{ transform:translateY(-3px); }
+.dress-item.sel{ border-color:var(--brown); background:#f6e3bd; }
+.dress-item svg{ width:70px; height:auto; }
+.dress-item .nm{ font-size:24px; line-height:1; text-align:center; }
+.dress-item.locked{ cursor:not-allowed; }
+.dress-item.locked svg{ filter:grayscale(1) brightness(.5); opacity:.35; }
+.dress-item.locked .nm{ visibility:hidden; }
+.dress-item .lock{
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+  font-family:var(--font-title); font-size:28px; letter-spacing:1px; color:var(--brown);
+}
+.dress-item .lock span:first-child{ font-size:34px; }
+.dress-hint{ position:absolute; left:100px; right:100px; bottom:34px; text-align:left; font-size:26px; opacity:.9; }
+
+/* ---------- Tribunal (juicio / desafío) ---------- */
+.court{
+  position:absolute; left:140px; right:140px; top:70px; height:380px;
+  border-radius:14px; overflow:hidden;
+  box-shadow:0 0 0 6px var(--brown), 0 14px 30px rgba(0,0,0,.45);
+}
+.court .judge-spr{ position:absolute; left:50%; top:46px; transform:translateX(-50%); }
+.court .player-spr{ position:absolute; left:80px; bottom:20px; }
+.court .bench{ position:absolute; left:50%; transform:translateX(-50%); top:232px; width:330px; height:50px; background:#6b3a1f; border-radius:4px; box-shadow:inset 0 6px 0 #8c5330; }
+.speech{
+  position:absolute; left:140px; right:140px; top:470px; min-height:130px;
+  background:var(--cream-field); color:var(--brown); border-radius:14px; padding:18px 30px;
+  font-size:29px; line-height:1.22; box-shadow:0 6px 0 #b9a58a;
+}
+.speech::before{ content:''; position:absolute; top:-16px; left:50%; margin-left:-16px; border:16px solid transparent; border-top:0; border-bottom-color:var(--cream-field); }
+.speech .who{ font-family:var(--font-title); font-size:30px; letter-spacing:1px; color:var(--brown-soft); display:block; }
+.speech .cursor{ display:inline-block; width:12px; height:24px; background:var(--brown); margin-left:3px; vertical-align:-3px; animation:blink .8s steps(1) infinite; }
+@keyframes blink{ 50%{ opacity:0; } }
+.juicio-btn{ right:56px; bottom:26px; font-size:40px; padding:12px 36px 10px; }
+
+/* ---------- Desafío de nivel ---------- */
+.ch-title{ top:18px; font-size:62px; }
+.ch-clue{
+  position:absolute; left:120px; right:120px; top:92px; display:flex; align-items:center; gap:20px;
+  background:var(--brown); border-radius:12px; padding:10px 24px; min-height:84px;
+}
+.ch-clue svg{ flex:none; width:56px; height:auto; }
+.ch-clue .txt{ font-size:27px; line-height:1.15; flex:1; }
+.ch-clue .meta{ font-family:var(--font-title); font-size:30px; letter-spacing:1px; text-align:right; white-space:nowrap; line-height:1.1; opacity:.9; }
+.grid{
+  position:absolute; left:0; right:0; top:196px;
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+}
+.grid .row{ display:flex; gap:6px; }
+.cell{
+  width:var(--cs,44px); height:var(--cs,44px);
+  background:var(--cream-field); color:var(--brown);
+  border-radius:6px; display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-title); font-size:calc(var(--cs,44px) * .78); line-height:1; padding-top:3px;
+  box-shadow:0 3px 0 #b9a58a;
+}
+.cell.active{ outline:3px solid var(--gold); outline-offset:1px; }
+.cell.good{ background:var(--green); color:#fff; box-shadow:0 3px 0 #2f5434; }
+.cell.near{ background:var(--yellow); color:#fff; box-shadow:0 3px 0 #8a6d2a; }
+.cell.miss{ background:#7d6670; color:#fff; box-shadow:0 3px 0 #4f3d46; }
+.cell.pop{ animation:pop .12s; }
+@keyframes pop{ 50%{ transform:scale(1.12); } }
+.cell.flip{ animation:flip .45s both; }
+@keyframes flip{ 0%{ transform:rotateX(0); } 50%{ transform:rotateX(90deg); } 100%{ transform:rotateX(0); } }
+.grid .row.shake{ animation:shake .35s; }
+
+.kb{ position:absolute; left:0; right:0; bottom:22px; display:flex; flex-direction:column; align-items:center; gap:7px; }
+.kb .krow{ display:flex; gap:7px; }
+.key{
+  min-width:62px; height:50px; padding:0 10px; border:0; cursor:pointer;
+  background:var(--cream-field); color:var(--brown); border-radius:8px;
+  font-family:var(--font-title); font-size:32px; padding-top:4px;
+  box-shadow:0 4px 0 #b9a58a;
+}
+.key:hover{ filter:brightness(1.06); }
+.key:active{ transform:translateY(3px); box-shadow:0 1px 0 #b9a58a; }
+.key.wide{ min-width:108px; font-size:26px; letter-spacing:1px; background:var(--brown); color:var(--cream); box-shadow:0 4px 0 #1d0b02; }
+.key.good{ background:var(--green); color:#fff; box-shadow:0 4px 0 #2f5434; }
+.key.near{ background:var(--yellow); color:#fff; box-shadow:0 4px 0 #8a6d2a; }
+.key.miss{ background:#7d6670; color:#fff; box-shadow:0 4px 0 #4f3d46; opacity:.6; }
+
+/* ---------- Resultado ---------- */
+.res-stars{ position:absolute; left:0; right:0; top:200px; text-align:center; font-size:110px; letter-spacing:12px; color:var(--cream); }
+.res-stars .off{ opacity:.22; }
+.res-score{ position:absolute; left:0; right:0; top:350px; text-align:center; font-family:var(--font-title); font-size:70px; letter-spacing:2px; }
+.res-note{ position:absolute; left:160px; right:160px; top:440px; text-align:center; }
+.res-btns{ position:absolute; left:0; right:0; bottom:60px; display:flex; justify-content:center; flex-wrap:wrap; gap:20px; }
+.res-btns .btn{ position:static; font-size:34px; padding:12px 28px 10px; }
+.words-list{ position:absolute; left:0; right:0; top:420px; text-align:center; font-size:30px; }
+
+/* ---------- Preguntas de opción múltiple + barra de 20 s ---------- */
+.qt-bar{ position:absolute; left:0; right:0; top:0; height:18px; background:rgba(0,0,0,.45); z-index:7; }
+.qt-bar .fill{ height:100%; width:100%; background:var(--gold); }
+.qt-bar .fill.low{ background:var(--red); }
+.court.q-court{ left:0; right:0; top:18px; height:300px; border-radius:0; box-shadow:0 6px 0 var(--brown); }
+.q-court .judge-spr{ top:36px; }
+.q-court .bench{ top:186px; width:300px; height:40px; }
+.q-court .player-spr{ left:90px; bottom:6px; }
+.q-court .fiscal-spr{ position:absolute; right:90px; bottom:6px; }
+.q-meta{ position:absolute; right:30px; top:30px; z-index:6; font-family:var(--font-title); font-size:30px; letter-spacing:1px; background:rgba(58,26,7,.85); padding:6px 16px 2px; border-radius:10px; }
+.q-text{
+  position:absolute; left:40px; right:40px; top:318px; height:116px; display:flex; align-items:center;
+  background:#5b3350; color:var(--cream); border-radius:22px; padding:10px 34px; font-size:30px; line-height:1.15;
+}
+.q-opts{
+  position:absolute; left:40px; right:40px; top:448px; display:grid; grid-template-columns:1fr 1fr;
+  grid-template-rows:84px 84px; grid-auto-flow:column; gap:14px 22px;
+}
+.q-opt{
+  border:0; cursor:pointer; text-align:left; background:#5b3350; color:var(--cream); border-radius:22px;
+  padding:6px 26px 2px; font-family:var(--font-title); font-size:29px; letter-spacing:.5px; line-height:1.05; text-transform:uppercase;
+  display:flex; align-items:center; gap:10px; transition:transform .1s, filter .1s;
+}
+.q-opt b{ font-weight:400; flex:none; }
+.q-opt:hover{ filter:brightness(1.15); }
+.q-opt.sel{ outline:4px solid var(--gold); outline-offset:2px; }
+.q-opt.right{ background:var(--green); color:#fff; }
+.q-opt.wrong{ background:var(--red); color:#fff; }
