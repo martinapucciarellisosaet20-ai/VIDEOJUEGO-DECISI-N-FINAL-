@@ -1,0 +1,152 @@
+/* =========================================================
+   PANTALLAS · posiciones calcadas de los diseños de Figma
+   (stage 1280x720)
+   ========================================================= */
+
+/* ---------- Portada ---------- */
+.splash-logo{
+  position:absolute; left:50%; top:26px; transform:translateX(-50%);
+  width:480px; height:480px; border-radius:18px;
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
+  animation:float 3.2s ease-in-out infinite;
+}
+@keyframes float{ 50%{ transform:translateX(-50%) translateY(-8px); } }
+.splash-btn{ left:50%; bottom:58px; transform:translateX(-50%); font-size:58px; padding:18px 70px 14px; }
+.splash-btn:hover{ transform:translateX(-50%) translateY(-2px); }
+.splash-btn:active{ transform:translateX(-50%) translateY(4px); }
+
+/* ---------- Registro ---------- */
+#f-correo{ top:248px; }
+#f-usuario{ top:463px; }
+
+/* ---------- Menú ---------- */
+.menu-perfil{ left:-30px; top:104px; width:158px; }
+.menu-config{ right:-24px; top:104px; width:122px; }
+.menu-title{ top:268px; }
+.menu-ranking{ left:217px; top:436px; width:235px; }
+.menu-play{ left:532px; top:440px; width:235px; }
+.menu-manual{ left:842px; top:430px; width:235px; }
+.menu-user{
+  position:absolute; left:0; right:0; top:372px; text-align:center;
+  font-size:30px; color:var(--cream); opacity:.85;
+}
+
+/* ---------- Configuración ---------- */
+.cfg-title{ top:50px; }
+.cfg-vol-l{ left:186px; top:240px; }
+input.cfg-vol{ position:absolute; left:204px; top:318px; width:447px; }
+.cfg-bri-l{ left:196px; top:410px; }
+input.cfg-bri{ position:absolute; left:204px; top:490px; width:447px; }
+.cfg-idi-l{ left:823px; top:240px; }
+.cfg-idi{ position:absolute; left:823px; top:308px; }
+.cfg-gra-l{ left:815px; top:395px; }
+.cfg-gra{ position:absolute; left:823px; top:460px; }
+.cfg-soporte{ right:20px; bottom:20px; width:106px; }
+.val{ position:absolute; font-size:26px; opacity:.8; }
+
+/* ---------- Soporte ---------- */
+.sup-q{
+  font-family:var(--font-title); font-size:42px; letter-spacing:1px; line-height:1;
+  color:var(--cream);
+}
+.sup-block{ position:absolute; left:210px; width:860px; }
+.sup-block .text{ margin-top:6px; }
+.sup-btn{ left:50%; bottom:44px; transform:translateX(-50%); }
+.sup-btn:hover{ transform:translateX(-50%) translateY(-2px); }
+.sup-btn:active{ transform:translateX(-50%) translateY(4px); }
+.modal textarea{
+  width:100%; height:150px; resize:none; border:0; border-radius:10px;
+  background:var(--cream-field); color:var(--brown);
+  font-family:var(--font-text); font-size:30px; padding:14px 18px; outline:none;
+  user-select:text;
+}
+.modal .row{ display:flex; gap:16px; justify-content:flex-end; margin-top:18px; }
+.modal .row .btn{ position:static; }
+
+/* ---------- Manual ---------- */
+.man-card{
+  position:absolute; left:100px; top:190px; width:430px; height:420px;
+  background:var(--cream-field); border-radius:16px;
+  box-shadow:0 8px 0 rgba(0,0,0,.25);
+  display:flex; flex-wrap:wrap; gap:12px; padding:24px; align-content:flex-start; justify-content:center;
+}
+.man-card .tile{ width:86px; height:86px; background:#efdcba; border-radius:10px; display:flex; align-items:center; justify-content:center; }
+.man-card .tile svg{ width:70px; height:auto; }
+.man-text{ position:absolute; left:590px; top:190px; width:600px; }
+.man-text p + p{ margin-top:16px; }
+
+/* ---------- Ranking ---------- */
+.rank-list{ position:absolute; left:140px; right:140px; top:168px; display:flex; flex-direction:column; gap:12px; }
+.rank-row{ display:flex; align-items:center; gap:20px; height:84px; }
+.rank-pos{ width:50px; font-family:var(--font-title); font-size:56px; text-align:center; }
+.rank-avatar{ width:80px; height:80px; border-radius:50%; background:var(--brown); border:4px solid var(--cream); display:flex; align-items:center; justify-content:center; overflow:hidden; flex:none; }
+.rank-avatar svg{ width:70px; height:auto; margin-top:6px; }
+.rank-bar{ flex:1; height:64px; background:rgba(20,5,12,.45); border-radius:32px; position:relative; overflow:hidden; }
+.rank-bar .fill{ position:absolute; left:0; top:0; bottom:0; background:var(--cream-field); border-radius:32px; transition:width .8s ease; }
+.rank-bar .name{ position:absolute; left:26px; top:50%; transform:translateY(-46%); font-family:var(--font-title); font-size:36px; letter-spacing:1px; color:var(--brown); z-index:1; }
+.rank-pts{ width:120px; font-size:32px; text-align:right; color:var(--cream); }
+.rank-row.me .rank-bar .fill{ background:var(--gold); }
+.rank-stars{ width:110px; font-size:40px; color:var(--cream); letter-spacing:2px; text-align:left; }
+.rank-stars .off{ opacity:.25; }
+
+/* ---------- Selección de nivel ---------- */
+.lvl-list{ position:absolute; left:250px; right:250px; top:190px; bottom:20px; display:flex; flex-direction:column; gap:18px; overflow-y:auto; padding:0 8px 14px; }
+.lvl-list .lvl-row{ flex:none; }
+.lvl-list::-webkit-scrollbar{ width:12px; }
+.lvl-list::-webkit-scrollbar-thumb{ background:var(--cream); border-radius:8px; }
+.lvl-row{
+  display:flex; align-items:center; gap:20px;
+  height:96px; padding:0 30px; text-decoration:none;
+  background:var(--cream-field); color:var(--brown); border-radius:14px;
+  box-shadow:0 6px 0 #b9a58a;
+  transition:transform .1s;
+}
+.lvl-row:hover{ transform:translateY(-3px); }
+.lvl-row .dot{ width:58px; height:58px; border-radius:50%; background:var(--brown); display:flex; align-items:center; justify-content:center; flex:none; }
+.lvl-row .dot svg{ width:24px; }
+.lvl-row .nm{ font-family:var(--font-title); font-size:58px; letter-spacing:2px; line-height:1; flex:1; padding-top:6px; }
+.lvl-row .sub{ font-size:26px; opacity:.75; }
+.lvl-row .stars{ font-size:38px; letter-spacing:3px; color:var(--brown-soft); }
+.lvl-row .stars .off{ opacity:.25; }
+.lvl-row.locked{ opacity:.5; filter:grayscale(.6); cursor:not-allowed; }
+
+/* ---------- Título / descripción de nivel ---------- */
+.banner{
+  position:absolute; left:0; right:0; top:270px; height:180px;
+  background:var(--brown); display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 0 rgba(0,0,0,.2);
+}
+.banner h1{ font-family:var(--font-title); font-weight:400; font-size:108px; letter-spacing:2px; color:var(--cream); padding-top:10px; }
+.lvl-tag{ position:absolute; left:80px; top:34px; font-family:var(--font-title); font-size:64px; color:var(--cream); }
+.desc-panel{ left:80px; right:80px; top:120px; padding:46px 56px; }
+.desc-panel p{ font-size:34px; line-height:1.3; }
+.desc-panel p + p{ margin-top:24px; }
+
+/* ---------- Información del caso ---------- */
+.folders{ position:absolute; left:0; right:0; top:200px; display:flex; justify-content:center; gap:70px; }
+.folder{
+  width:230px; border:0; background:none; cursor:pointer; text-align:center; color:var(--cream);
+  transition:transform .12s;
+}
+.folder:hover{ transform:translateY(-6px); }
+.folder svg{ width:190px; display:block; margin:0 auto; }
+.folder .nm{ display:block; margin-top:8px; font-family:var(--font-title); font-size:44px; letter-spacing:1px; }
+.folder .chk{ display:block; font-size:24px; opacity:0; transition:.2s; color:#c8f0c8; }
+.folder.read .chk{ opacity:1; }
+.folder.read svg{ filter:saturate(.7) brightness(.9); }
+.caso-hint{ position:absolute; left:140px; right:200px; top:480px; }
+.caso-falta{ position:absolute; left:140px; bottom:44px; font-size:26px; opacity:.85; }
+
+.doc-overlay{ position:absolute; inset:0; z-index:300; background:var(--wine) url('../assets/img/fondo.png') center/cover; }
+.doc-head{ position:absolute; left:170px; right:60px; top:36px; display:flex; align-items:center; gap:24px; }
+.doc-head .tab{ background:var(--brown); border-radius:10px; padding:12px 24px 8px; font-family:var(--font-title); font-size:40px; letter-spacing:1px; }
+.doc-head .sub{ font-size:28px; opacity:.9; font-style:italic; }
+.doc-body{ position:absolute; left:80px; right:80px; top:120px; bottom:40px; padding:34px 48px; overflow:auto; }
+.doc-body p{ font-size:31px; line-height:1.3; }
+.doc-body p + p{ margin-top:18px; }
+.doc-body::-webkit-scrollbar{ width:10px; }
+.doc-body::-webkit-scrollbar-thumb{ background:var(--wine); border-radius:6px; }
+.wave{ display:flex; align-items:center; gap:3px; height:60px; margin-top:26px; }
+.wave span{ flex:1; background:var(--cream); border-radius:2px; opacity:.5; transition:height .12s, opacity .12s; }
+.wave.playing span{ opacity:1; }
+.play-audio{ position:static !important; margin-top:20px; font-size:34px; padding:10px 30px 8px; display:inline-block; }
