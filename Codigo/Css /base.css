@@ -1,0 +1,75 @@
+/* =========================================================
+   BASE · fuentes, variables y escenario (stage) 1280x720
+   ========================================================= */
+@font-face{
+  font-family:'Bebas Neue';
+  src:url('../assets/fonts/bebas-neue-latin-400-normal.woff2') format('woff2');
+  font-display:swap;
+}
+@font-face{
+  font-family:'Instrument Serif';
+  src:url('../assets/fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
+  font-style:normal; font-display:swap;
+}
+@font-face{
+  font-family:'Instrument Serif';
+  src:url('../assets/fonts/instrument-serif-latin-400-italic.woff2') format('woff2');
+  font-style:italic; font-display:swap;
+}
+
+:root{
+  --wine:#5f2d47;
+  --wine-dark:#4a1f37;
+  --cream:#fbebd3;
+  --cream-field:#fbeeda;
+  --brown:#3a1a07;
+  --brown-soft:#5a2c12;
+  --ink:#1e0f08;
+  --gold:#e0b070;
+  --green:#4f8a56;
+  --yellow:#c9a24a;
+  --red:#b23b3b;
+  --gray:#8a7a80;
+
+  --font-title:'Bebas Neue', 'Oswald', Impact, sans-serif;
+  --font-text:'Instrument Serif', 'Libre Caslon Text', Georgia, serif;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html,body{ height:100%; }
+body{
+  background:#1c0a13;
+  overflow:hidden;
+  font-family:var(--font-text);
+  color:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  user-select:none;
+}
+
+/* Contenedor que ocupa toda la ventana y centra el stage */
+.viewport{
+  position:fixed; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+
+/* El stage tiene SIEMPRE 1280x720 y se escala con JS (stage.js) */
+.stage{
+  position:relative;
+  flex:none;
+  width:1280px; height:720px;
+  background:var(--wine) url('../assets/img/fondo.png') center/cover no-repeat;
+  overflow:hidden;
+  transform-origin:center center;
+}
+
+/* Capa de brillo (Configuración → Brillo) */
+.stage-shade{
+  position:absolute; inset:0; z-index:9999; pointer-events:none;
+  background:#000; opacity:0;
+}
+
+/* Utilidades de posicionamiento absoluto dentro del stage */
+.abs{ position:absolute; }
+.center-x{ left:50%; transform:translateX(-50%); }
+.hidden{ display:none !important; }
