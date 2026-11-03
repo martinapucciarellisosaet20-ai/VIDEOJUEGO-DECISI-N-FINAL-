@@ -1,0 +1,16 @@
+Música de fondo · "Decisión Final - Tema de quiz"
+Archivos: musica-quiz.ogg y musica-quiz.mp3 (el mismo tema en dos formatos)
+
+Composición ORIGINAL creada para este juego con el programa
+tools/build_music.py (síntesis por código: no usa samples, grabaciones
+ni fragmentos de obras de terceros).
+
+Licencia: CC0 1.0 Universal (dominio público)
+https://creativecommons.org/publicdomain/zero/1.0/deed.es
+Se puede usar, copiar, modificar y distribuir libremente, incluso con
+fines comerciales, sin pedir permiso ni citar al autor.
+
+Para regenerarla:  python3 tools/build_music.py
+Para usar otra música: reemplazá los dos archivos manteniendo los nombres
+(o cambiá las rutas en index.html y js/core/music.js) y verificá que
+su licencia permita usarla en el proyecto.
