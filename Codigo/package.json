@@ -1,0 +1,16 @@
+{
+  "name": "decision-final",
+  "version": "2.1.0",
+  "description": "DF · Decisión Final — juego educativo de Educación Ciudadana (HTML/CSS/JS)",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes http-server -p 8080 -c-1 .",
+    "test": "node tests/e2e.js",
+    "sprites": "python3 tools/build_sprites.py",
+    "music": "python3 tools/build_music.py",
+    "tutorial": "node tools/build_tutorial.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}
